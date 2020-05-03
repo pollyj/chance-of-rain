@@ -12,9 +12,7 @@ class ViewController: UIViewController {
     
     // declare outlet
 
-    @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var mainWeatherIcon: UIImageView!
-    @IBOutlet weak var mainTemperature: UILabel!
+
     
     
     override func viewDidLoad() {
