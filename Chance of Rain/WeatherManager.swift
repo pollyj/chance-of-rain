@@ -8,39 +8,29 @@
 
 import Foundation
 
-struct weatherManager {
+struct WeatherManager {
     let weatherURL =
     "https://api.openweathermap.org/data/2.5/weather?q=tokyo,jp&appid=bf34339e60550c61392c04f598f14058&units=metric"
     
-    func fetchWeather() {
+    func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
         performRequest(urlString: urlString)
     }
     
     func performRequest(urlString: String){
         //1. Create a URL
-        if let url = URL(string: urlString)
-        
-        //2. Create a URLSession
-        
-        let session = URLSession(configuration: .default)
-        
-        //3. Give the session a task
-        
-        let task = session.dataTask(with: url!) { (data, response, error) in
-            if error != nil {
-                print(error!)
-                return
-            }
+        if let url = URL(string: urlString) {
             
-            if let safeData = data {
-                //calling struct method within a closure requires "self."
-                self.parseJSON(weatherData: safeData)
-            }
+            //2. Create a URLSession
+            let session = URLSession(configuration: .default)
+            
+            //3. Give the session a task
+                   
+            let task = session.dataTask(with: url, completionHandler: handle(data: <#Data?#>, response: <#URLResponse?#>, error: <#Error?#>))
+            
+            //4. Start the task
+            task.resume()
         }
-        
-        //4. Start the task
-        task.resume()
     }
     
     func handle(data: Data?, response: URLResponse?, error: Error?) {

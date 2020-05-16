@@ -9,24 +9,24 @@
 import UIKit
 
 
-class ViewController: UIViewController {
-    
-//    var weatherManager = weatherManager(){
-//
-//    }
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     
+    var weatherManager = WeatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTextField.delegate = self
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
-        print(searchTextField.text)
+        searchTextField.endEditing(true)
+        print(searchTextField.text!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -43,12 +43,12 @@ class ViewController: UIViewController {
         }
     }
     
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        if let city = searchTextField.text {
-//            weatherManager.fetchWeather(cityName: city)
-//        }
-//        searchTextField.text = ""
-//    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        searchTextField.text = ""
+    }
 
 
 }
