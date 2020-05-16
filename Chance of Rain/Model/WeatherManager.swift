@@ -8,17 +8,18 @@
 
 import Foundation
 
-struct weather {
+struct weatherManager {
     let weatherURL =
     "https://api.openweathermap.org/data/2.5/weather?q=tokyo,jp&appid=bf34339e60550c61392c04f598f14058&units=metric"
     
     func fetchWeather() {
-        performRequest(weatherURL: weatherURL)
+        let urlString = "\(weatherURL)&q=\(cityName)"
+        performRequest(urlString: urlString)
     }
     
-    func performRequest(weatherURL: String){
+    func performRequest(urlString: String){
         //1. Create a URL
-        let url = URL(string: weatherURL)
+        if let url = URL(string: urlString)
         
         //2. Create a URLSession
         
@@ -40,6 +41,10 @@ struct weather {
         
         //4. Start the task
         task.resume()
+    }
+    
+    func handle(data: Data?, response: URLResponse?, error: Error?) {
+        
     }
     
     func parseJSON(weatherData: Data) {
