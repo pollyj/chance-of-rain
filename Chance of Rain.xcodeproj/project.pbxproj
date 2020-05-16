@@ -59,14 +59,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		666CCB9924702CFE0067E7BC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				74615AC1245EA0EC00B078E9 /* ViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		74615AB1245EA0EC00B078E9 = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +83,7 @@
 				666CCB9824702CEC0067E7BC /* View */,
 				666CCB97247029020067E7BC /* Model */,
 				6682726B24604C7700E5082F /* WeatherData.swift */,
-				666CCB9924702CFE0067E7BC /* Controller */,
+				74615AC1245EA0EC00B078E9 /* ViewController.swift */,
 				74615AC6245EA0F400B078E9 /* Assets.xcassets */,
 				668272672460363200E5082F /* background.jpg */,
 				74615AC8245EA0F400B078E9 /* LaunchScreen.storyboard */,

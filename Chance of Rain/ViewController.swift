@@ -11,18 +11,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var weatherManager = weatherManager(){
-        
-    }
+//    var weatherManager = weatherManager(){
+//
+//    }
 
     @IBOutlet weak var cityName: UILabel!
-    
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var weatherIcon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    @IBAction func searchPressed(_ sender: UIButton) {
+        print(searchTextField.text)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
@@ -38,12 +43,12 @@ class ViewController: UIViewController {
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let city = searchTextField.text {
-            weatherManager.fetchWeather(cityName: city)
-        }
-        searchTextField.text = ""
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        if let city = searchTextField.text {
+//            weatherManager.fetchWeather(cityName: city)
+//        }
+//        searchTextField.text = ""
+//    }
 
 
 }
