@@ -21,7 +21,6 @@ struct WeatherManager {
     "https://api.openweathermap.org/data/2.5/weather?appid=bf34339e60550c61392c04f598f14058&units=metric"
     
     let futureWeatherURL = "https://api.openweathermap.org/data/2.5/onecall?exclude=currently,minutely,hourly&appid=bf34339e60550c61392c04f598f14058&units=metric"
-//    &lat=33.441792&lon=-94.037689
     
     var delegate: WeatherManagerDelegate?
     
