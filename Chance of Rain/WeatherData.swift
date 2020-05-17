@@ -21,3 +21,22 @@ struct Main: Codable {
 struct Weather: Codable {
     let id: Int
 }
+
+struct Days: Codable {
+    let weather: [Weather]
+    let temp: Temp
+}
+
+struct Temp: Codable {
+    let min: Double
+    let max: Double
+}
+
+struct FutureWeatherData: Codable {
+    let current: Current
+    let daily: [Days]
+}
+
+struct Current: Codable {
+    let weather: [Weather]
+}
