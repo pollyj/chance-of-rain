@@ -12,16 +12,20 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var cityName: UILabel!
+    
+    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
+    
     
     var weatherManager = WeatherManager()
     let locationManger = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(cityLabel.text)
         
         locationManger.delegate = self
         locationManger.requestWhenInUseAuthorization()
@@ -68,7 +72,8 @@ extension ViewController: WeatherManagerDelegate {
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.temperatureString
             self.weatherIcon.image = UIImage(systemName: weather.conditionName)
-            self.cityName.text = weather.citysName
+            
+            self.cityLabel.text = weather.citysName
         }
     }
     
