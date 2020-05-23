@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct WeatherModel {
     let conditionId: Int
     let citysName: String
     let temperature: Double
+    let lat: CLLocationDegrees
+    let lon: CLLocationDegrees
     
     var temperatureString: String {
         return String(format: "%.1f", temperature)

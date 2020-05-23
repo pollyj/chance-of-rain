@@ -87,6 +87,8 @@ extension ViewController: WeatherManagerDelegate {
             
             self.cityLabel.text = weather.citysName
         }
+        
+        //didUpdateFutureWeather(<#T##weatherManager: WeatherManager##WeatherManager#>, weather: <#T##FutureWeatherModel#>)
     }
     
     func didUpdateFutureWeather(_ weatherManager: WeatherManager, weather: FutureWeatherModel) {
@@ -102,10 +104,10 @@ extension ViewController: WeatherManagerDelegate {
             self.FutureWeatherMin3.text = "\(weather.minString3)°C"
             self.FutureWeatherMin4.text = "\(weather.minString4)°C"
 
-            self.FutureWeatherMax1.text = "\(weather.minString1)°C"
-            self.FutureWeatherMax2.text = "\(weather.minString2)°C"
-            self.FutureWeatherMax3.text = "\(weather.minString3)°C"
-            self.FutureWeatherMax4.text = "\(weather.minString4)°C"
+            self.FutureWeatherMax1.text = "\(weather.maxString1)°C"
+            self.FutureWeatherMax2.text = "\(weather.maxString2)°C"
+            self.FutureWeatherMax3.text = "\(weather.maxString3)°C"
+            self.FutureWeatherMax4.text = "\(weather.maxString4)°C"
         }
     }
     

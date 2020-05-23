@@ -7,11 +7,18 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct WeatherData: Codable {
     let name: String
     let main: Main
     let weather: [Weather]
+    let coord: Coord
+}
+
+struct Coord: Codable {
+    let lat: CLLocationDegrees
+    let lon: CLLocationDegrees
 }
 
 struct Main: Codable {
