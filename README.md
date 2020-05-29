@@ -6,7 +6,7 @@ Made by [@pollyj](https://github.com/pollyj) and [@yuya-h-29](https://github.com
 
 To run this app, clone the repo and open in Xcode. Use Xcode's built in simulator to view the app! 📱🌦✨
 
-![Screenshot](https://imgur.com/Wc0je5t)
+![Screenshot](https://i.imgur.com/Wc0je5t.jpg)
 
 ## To-Do
 - [ ] Fix bug where future weather forecasts do not update after the first time.
